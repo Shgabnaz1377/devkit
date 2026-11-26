@@ -52,6 +52,22 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./yaml/YamlView.vue'),
   },
   {
+    id: 'encode',
+    name: 'Encode / decode',
+    description: 'Base64 (standard or URL-safe), URL percent-encoding and HTML entities, both directions.',
+    category: 'Encoding',
+    keywords: ['base64', 'url encode', 'percent', 'html entities', 'escape', 'unescape'],
+    component: () => import('./encode/EncodeView.vue'),
+  },
+  {
+    id: 'hash',
+    name: 'Hash generator',
+    description: 'SHA-1, SHA-256, SHA-384 and SHA-512 digests and HMACs of text or files, via Web Crypto.',
+    category: 'Security',
+    keywords: ['sha256', 'sha1', 'sha512', 'checksum', 'digest', 'hmac'],
+    component: () => import('./hash/HashView.vue'),
+  },
+  {
     id: 'cron',
     name: 'Cron explainer',
     description: 'Explain a cron expression in plain English and list its next 10 run times.',
