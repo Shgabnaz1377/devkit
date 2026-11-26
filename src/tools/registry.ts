@@ -68,6 +68,22 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./hash/HashView.vue'),
   },
   {
+    id: 'uuid',
+    name: 'UUID / ULID generator',
+    description: 'Generate UUID v4, time-ordered UUID v7 and ULIDs in bulk, and inspect existing IDs.',
+    category: 'Generators',
+    keywords: ['guid', 'uuidv7', 'ulid', 'random id', 'identifier'],
+    component: () => import('./ids/IdsView.vue'),
+  },
+  {
+    id: 'timestamp',
+    name: 'Unix timestamp converter',
+    description: 'Convert Unix timestamps (s, ms, us, ns) and ISO dates across time zones, DST-aware.',
+    category: 'Time',
+    keywords: ['epoch', 'date', 'time zone', 'unix time', 'iso 8601', 'dst'],
+    component: () => import('./timestamp/TimestampView.vue'),
+  },
+  {
     id: 'cron',
     name: 'Cron explainer',
     description: 'Explain a cron expression in plain English and list its next 10 run times.',
