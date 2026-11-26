@@ -26,7 +26,16 @@ export interface ToolDefinition {
  * Every tool registers itself here; routes, the sidebar, the home grid and
  * the command palette are all derived from this list.
  */
-export const tools: readonly ToolDefinition[] = []
+export const tools: readonly ToolDefinition[] = [
+  {
+    id: 'jwt',
+    name: 'JWT decoder',
+    description: 'Decode JSON Web Tokens, check exp/nbf, and verify HS256/384/512 signatures.',
+    category: 'Security',
+    keywords: ['json web token', 'bearer', 'hs256', 'signature', 'claims'],
+    component: () => import('./jwt/JwtView.vue'),
+  },
+]
 
 export function findTool(id: string): ToolDefinition | undefined {
   return tools.find((t) => t.id === id)
