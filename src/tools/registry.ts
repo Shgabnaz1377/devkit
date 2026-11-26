@@ -60,6 +60,14 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./cron/CronView.vue'),
   },
   {
+    id: 'regex',
+    name: 'Regex tester',
+    description: 'Test JavaScript regular expressions with live highlighting, capture groups and replace.',
+    category: 'Text',
+    keywords: ['regular expression', 'regexp', 'match', 'capture group', 'replace'],
+    component: () => import('./regex/RegexView.vue'),
+  },
+  {
     id: 'jwt',
     name: 'JWT decoder',
     description: 'Decode JSON Web Tokens, check exp/nbf, and verify HS256/384/512 signatures.',
