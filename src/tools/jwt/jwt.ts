@@ -1,4 +1,5 @@
 import { fromBase64Url, toBase64Url } from '../../lib/share'
+import { describeRelative } from '../../lib/relative'
 
 export class JwtError extends Error {
   constructor(message: string) {
@@ -101,26 +102,7 @@ export interface ClaimsSummary {
 
 const TIME_LABELS = { exp: 'Expires', nbf: 'Not before', iat: 'Issued at' } as const
 
-export function describeRelative(deltaSeconds: number): string {
-  const abs = Math.abs(deltaSeconds)
-  const units: [number, string][] = [
-    [365 * 86400, 'year'],
-    [30 * 86400, 'month'],
-    [86400, 'day'],
-    [3600, 'hour'],
-    [60, 'minute'],
-    [1, 'second'],
-  ]
-  if (abs < 1) return 'now'
-  for (const [size, unit] of units) {
-    if (abs >= size) {
-      const n = Math.floor(abs / size)
-      const text = `${n} ${unit}${n === 1 ? '' : 's'}`
-      return deltaSeconds < 0 ? `${text} ago` : `in ${text}`
-    }
-  }
-  return 'now'
-}
+export { describeRelative }
 
 /**
  * Inspect exp/nbf/iat. `nowSeconds` is injectable for tests; `leewaySeconds`
