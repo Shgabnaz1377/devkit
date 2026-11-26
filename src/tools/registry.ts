@@ -52,6 +52,14 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./yaml/YamlView.vue'),
   },
   {
+    id: 'cron',
+    name: 'Cron explainer',
+    description: 'Explain a cron expression in plain English and list its next 10 run times.',
+    category: 'Time',
+    keywords: ['crontab', 'schedule', 'job', 'next run'],
+    component: () => import('./cron/CronView.vue'),
+  },
+  {
     id: 'jwt',
     name: 'JWT decoder',
     description: 'Decode JSON Web Tokens, check exp/nbf, and verify HS256/384/512 signatures.',
