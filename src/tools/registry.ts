@@ -28,6 +28,30 @@ export interface ToolDefinition {
  */
 export const tools: readonly ToolDefinition[] = [
   {
+    id: 'json',
+    name: 'JSON formatter',
+    description: 'Validate, pretty-print, minify and explore JSON as a tree, with exact error positions.',
+    category: 'Data',
+    keywords: ['pretty print', 'validate', 'lint', 'minify', 'beautify', 'tree'],
+    component: () => import('./json/JsonView.vue'),
+  },
+  {
+    id: 'json-diff',
+    name: 'JSON diff',
+    description: 'Compare two JSON documents structurally and list every added, removed and changed path.',
+    category: 'Data',
+    keywords: ['compare', 'difference', 'changes', 'jsonpath'],
+    component: () => import('./json/JsonDiffView.vue'),
+  },
+  {
+    id: 'yaml',
+    name: 'YAML / JSON converter',
+    description: 'Convert YAML to JSON and back (YAML 1.2), with multi-document and anchor support.',
+    category: 'Data',
+    keywords: ['yml', 'convert', 'kubernetes', 'config'],
+    component: () => import('./yaml/YamlView.vue'),
+  },
+  {
     id: 'jwt',
     name: 'JWT decoder',
     description: 'Decode JSON Web Tokens, check exp/nbf, and verify HS256/384/512 signatures.',
