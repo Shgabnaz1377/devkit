@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router'
 import CommandPalette from './components/CommandPalette.vue'
 import { cycleTheme, settings } from './composables/useSettings'
 import { toolsByCategory } from './tools/registry'
+import { offlineReady } from './pwa'
 
 const paletteOpen = ref(false)
 const navOpen = ref(false)
@@ -85,6 +86,7 @@ const themeLabel = { system: 'Theme: system', light: 'Theme: light', dark: 'Them
 
   <footer class="footer muted">
     Runs entirely in your browser. Nothing you type is sent anywhere.
+    <span v-if="offlineReady" class="offline" data-testid="offline-ready"> Works offline.</span>
   </footer>
 
   <CommandPalette v-model:open="paletteOpen" />
