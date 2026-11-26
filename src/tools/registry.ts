@@ -108,6 +108,14 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./regex/RegexView.vue'),
   },
   {
+    id: 'text-diff',
+    name: 'Text diff',
+    description: 'Compare two texts line by line with word-level highlights, side by side or as a unified patch.',
+    category: 'Text',
+    keywords: ['compare', 'difference', 'patch', 'unified diff', 'changes'],
+    component: () => import('./diff/DiffView.vue'),
+  },
+  {
     id: 'jwt',
     name: 'JWT decoder',
     description: 'Decode JSON Web Tokens, check exp/nbf, and verify HS256/384/512 signatures.',
