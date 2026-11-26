@@ -155,14 +155,14 @@ textarea[aria-invalid='true'] {
   border-color: var(--danger);
 }
 
-label.field {
+.field {
   display: flex;
   flex-direction: column;
   gap: 4px;
   font-weight: 600;
   font-size: 0.9rem;
 }
-label.field > span.hint {
+.field > span.hint {
   font-weight: 400;
   color: var(--muted);
 }
