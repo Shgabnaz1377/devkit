@@ -84,6 +84,14 @@ export const tools: readonly ToolDefinition[] = [
     component: () => import('./timestamp/TimestampView.vue'),
   },
   {
+    id: 'color',
+    name: 'Color converter',
+    description: 'Convert between HEX, RGB, HSL and OKLCH, and check WCAG contrast with fix suggestions.',
+    category: 'Design',
+    keywords: ['colour', 'hex', 'rgb', 'hsl', 'oklch', 'contrast', 'wcag', 'accessibility', 'a11y'],
+    component: () => import('./color/ColorView.vue'),
+  },
+  {
     id: 'cron',
     name: 'Cron explainer',
     description: 'Explain a cron expression in plain English and list its next 10 run times.',
