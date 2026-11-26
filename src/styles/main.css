@@ -473,8 +473,26 @@ table.kv td {
 }
 
 @media (max-width: 480px) {
+  /* Visually hidden but still the checkbox's accessible name. */
   .topbar-actions .toggle span {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  /* Stack key/value rows so long values are not squeezed into a narrow column. */
+  table.kv th,
+  table.kv td {
+    display: block;
+    border-bottom: 0;
+    padding: 2px 4px;
+  }
+  table.kv tr {
+    display: block;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
   }
 }
 
